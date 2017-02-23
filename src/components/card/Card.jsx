@@ -6,6 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CircularProgressWithLabel from "../progress_indicator/CircularProgress";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -78,7 +79,9 @@ function CampaignCard(props) {
         </div>
       </CardContent>
       <CardActions>
-        <Button size="small">Review Campaign</Button>
+        <Link to={`/:${props.id}`} style={{ textDecoration: "none" }}>
+          <Button size="small">Review Campaign</Button>
+        </Link>
       </CardActions>
     </Card>
   );

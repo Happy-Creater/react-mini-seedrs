@@ -25,6 +25,7 @@ function Row({ title, fetchUrl }) {
         {campaigns.map((campaign) => (
           <CampaignCard
             key={campaign.id}
+            id={campaign.id}
             className="row__card"
             name={campaign.name}
             percentageRaised={campaign.percentage_raised}
