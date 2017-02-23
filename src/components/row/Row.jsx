@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { campaignsAPI } from "../../axios";
+import CampaignCard from "../card/Card";
+import "./Row.css";
 
 function Row({ title, fetchUrl }) {
   const [campaigns, setCampaigns] = useState([]);
@@ -17,11 +19,19 @@ function Row({ title, fetchUrl }) {
   }, [fetchUrl]);
 
   return (
-    <div>
+    <div className="row">
       <h2>{title}</h2>
-      <div>
+      <div className="row__cards">
         {campaigns.map((campaign) => (
-          <img src={campaign.image} />
+          <CampaignCard
+            key={campaign.id}
+            className="row__card"
+            name={campaign.name}
+            percentageRaised={campaign.percentage_raised}
+            targetAmount={campaign.target_amount}
+            sector={campaign.sector}
+            image={campaign.image}
+          />
         ))}
       </div>
     </div>
@@ -29,3 +39,11 @@ function Row({ title, fetchUrl }) {
 }
 
 export default Row;
+
+{
+  /* <img
+className="row__card"
+src={campaign.image}
+alt={campaign.name}
+></img> */
+}
