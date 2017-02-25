@@ -79,7 +79,10 @@ function CampaignCard(props) {
         </div>
       </CardContent>
       <CardActions>
-        <Link to={`/:${props.id}`} style={{ textDecoration: "none" }}>
+        <Link
+          to={{ pathname: `/:${props.id}`, state: { lightmode: false } }}
+          style={{ textDecoration: "none" }}
+        >
           <Button size="small">Review Campaign</Button>
         </Link>
       </CardActions>

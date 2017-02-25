@@ -6,5 +6,10 @@
 }
 
 .row__cards::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
+}
+
+.row {
+  margin-left: 20px;
+  text-align: center;
 }

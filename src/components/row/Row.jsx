@@ -40,11 +40,3 @@ function Row({ title, fetchUrl }) {
 }
 
 export default Row;
-
-{
-  /* <img
-className="row__card"
-src={campaign.image}
-alt={campaign.name}
-></img> */
-}
