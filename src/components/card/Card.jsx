@@ -55,11 +55,7 @@ function CampaignCard(props) {
       >
         <CardContent>
           <div className={classes.cardHeader}>
-            <Typography
-              className={classes.title}
-              color="textSecondary"
-              gutterBottom
-            >
+            <Typography className={classes.title} color="inherit" gutterBottom>
               {props.sector}
             </Typography>
 
@@ -73,9 +69,9 @@ function CampaignCard(props) {
               <Typography variant="h5" component="h2">
                 {props.name}
               </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                is looking for £{props.targetAmount.toLocaleString()}
-                <br />
+              <Typography className={classes.pos} color="inherit" gutterBottom>
+                is looking for{" "}
+                <strong>£{props.targetAmount.toLocaleString()}</strong>
               </Typography>
             </div>
             <img

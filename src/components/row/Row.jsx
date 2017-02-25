@@ -21,8 +21,10 @@ function Row({ title, fetchUrl, subtitle }) {
 
   return (
     <div className="row">
-      <Typography variant="h4">{title}</Typography>
-      <Typography variant="subtitle1">
+      <Typography variant="h4" style={{ marginTop: "25px" }}>
+        {title}
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
         {subtitle} <br />
       </Typography>
       <div className="row__cards">

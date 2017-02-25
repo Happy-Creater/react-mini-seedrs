@@ -1,4 +1,4 @@
-import { Button, emphasize, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
 import React from "react";
 import { useEffect } from "react";
@@ -10,6 +10,19 @@ import requests from "../../requests";
 function Banner() {
   const theme = useTheme();
   const [campaign, setCampaign] = useState([]);
+  const synonymOfChanging = [
+    "changing",
+    "revolutionazing",
+    "disrupting",
+    "improving",
+    "revamping",
+    "upgrading",
+    "transforming",
+    "enhancing",
+    "modernizing",
+    "the poster child of",
+    "the rising star of",
+  ];
   useEffect(() => {
     async function fetchData() {
       const request = await campaignsAPI.get(requests.fetchOpen);
@@ -28,6 +41,7 @@ function Banner() {
         backgroundColor: theme.palette.primary.light,
         backgroundImage: `url(https://media.giphy.com/media/L3EZ0FdfMbjgNEpNLC/giphy.gif)`,
         height: "50vh",
+        minHeight: "200px",
       }}
     >
       <div
@@ -41,12 +55,19 @@ function Banner() {
           marginLeft: "10%",
         }}
       >
-        <Typography variant="h5" color="secondary" gutterBottom>
+        <Typography variant="h5" color="textSecondary" gutterBottom>
           Hey explorer!
         </Typography>
-        <Typography variant="body1" color="secondary">
-          <strong>{campaign.name}</strong> is revolutionizing the{" "}
-          <strong>{campaign.sector} industry</strong>.
+        <Typography variant="body1" color="textSecondary">
+          {campaign.name} is{" "}
+          <strong>
+            {
+              synonymOfChanging[
+                Math.floor(Math.random() * synonymOfChanging.length)
+              ]
+            }
+          </strong>{" "}
+          the {campaign.sector} industry in <strong>{campaign.country}</strong>.
         </Typography>
 
         <Link
@@ -54,7 +75,7 @@ function Banner() {
           style={{ textDecoration: "none", marginTop: "20px" }}
         >
           <Button variant="contained" color="primary">
-            <Typography variant="button" color="secondary">
+            <Typography variant="button" color="textSecondary">
               Check it out
             </Typography>
           </Button>
@@ -65,10 +86,3 @@ function Banner() {
 }
 
 export default Banner;
-{
-  /* className="row__card" name={campaign.name}
-        percentageRaised={campaign.percentage_raised}
-        targetAmount={campaign.target_amount}
-        sector={campaign.sector}
-        image={campaign.image} */
-}

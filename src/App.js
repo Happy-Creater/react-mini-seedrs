@@ -40,6 +40,9 @@ function App() {
         paper: "#F5F5F5",
         // main: "#FFFFFF",
       },
+      text: {
+        secondary: "#FFFFFF",
+      },
     },
     typography: {
       fontFamily: "'Lato', sans-serif",
@@ -58,6 +61,9 @@ function App() {
       },
       secondary: {
         main: "#333333",
+      },
+      text: {
+        secondary: "#FFFFFF",
       },
     },
     typography: {
