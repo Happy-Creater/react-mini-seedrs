@@ -24,25 +24,21 @@ import Header from "./components/header/Header";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const darkTheme = createMuiTheme({
-    palette: {
-      type: "dark",
-    },
-  });
-
-  const lightTheme = createMuiTheme({
-    palette: {
-      type: "light",
-    },
-  });
-
   const seedrsTheme = createMuiTheme({
     palette: {
       primary: {
         main: "#7FBB30",
+        light: "#23a393",
+        // light: "#a06ee1",
+        // light: "#64e291",
       },
       secondary: {
-        main: "#56508E",
+        // main: "#F5F6F8",
+        main: "#FFFFFF",
+      },
+      background: {
+        paper: "#F5F5F5",
+        // main: "#FFFFFF",
       },
     },
     typography: {
@@ -53,11 +49,15 @@ function App() {
   const crowdcubeTheme = createMuiTheme({
     palette: {
       type: "dark",
+      background: {
+        paper: "#222222",
+      },
       primary: {
         main: "#FF5100",
+        light: "#222222",
       },
       secondary: {
-        main: "#040352",
+        main: "#333333",
       },
     },
     typography: {

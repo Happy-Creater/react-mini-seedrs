@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -11,10 +11,12 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     minWidth: "250px",
+    minHeight: "300px",
     marginRight: "15px",
     transition: "transform 400ms",
     display: "flex",
     flexDirection: "column",
+    padding: "0 10px 20px",
     justifyContent: "space-between",
     "&:hover": {
       transform: "scale(1.07)",
@@ -44,49 +46,52 @@ const useStyles = makeStyles({
 
 function CampaignCard(props) {
   const classes = useStyles();
+  const theme = useTheme();
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <div className={classes.cardHeader}>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            {props.sector}
-          </Typography>
+    <Link to={{ pathname: `/:${props.id}` }} style={{ textDecoration: "none" }}>
+      <Card
+        className={classes.root}
+        style={{ backgroundColor: theme.palette.secondary.main }}
+      >
+        <CardContent>
+          <div className={classes.cardHeader}>
+            <Typography
+              className={classes.title}
+              color="textSecondary"
+              gutterBottom
+            >
+              {props.sector}
+            </Typography>
 
-          <CircularProgressWithLabel
-            variant="determinate"
-            value={props.percentageRaised}
-          />
-        </div>
-        <div>
-          <div>
-            <Typography variant="h5" component="h2">
-              {props.name}
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              is looking for £{props.targetAmount.toLocaleString()}
-              <br />
-            </Typography>
+            <CircularProgressWithLabel
+              variant="determinate"
+              value={props.percentageRaised}
+            />
           </div>
-          <img
-            src={props.image}
-            alt={props.name}
-            className={classes.companyLogo}
-          />
-        </div>
-      </CardContent>
-      <CardActions>
-        <Link
-          to={{ pathname: `/:${props.id}`, state: { lightmode: false } }}
-          style={{ textDecoration: "none" }}
-        >
-          <Button size="small">Review Campaign</Button>
-        </Link>
-      </CardActions>
-    </Card>
+          <div>
+            <div>
+              <Typography variant="h5" component="h2">
+                {props.name}
+              </Typography>
+              <Typography className={classes.pos} color="textSecondary">
+                is looking for £{props.targetAmount.toLocaleString()}
+                <br />
+              </Typography>
+            </div>
+            <img
+              src={props.image}
+              alt={props.name}
+              className={classes.companyLogo}
+            />
+          </div>
+        </CardContent>
+        <Typography align="center">
+          <Button variant="outlined" color="primary" size="small">
+            Review Campaign
+          </Button>
+        </Typography>
+      </Card>
+    </Link>
   );
 }
 

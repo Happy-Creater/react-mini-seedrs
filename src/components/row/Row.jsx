@@ -1,9 +1,10 @@
+import { Typography } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { campaignsAPI } from "../../axios";
 import CampaignCard from "../card/Card";
 import "./Row.css";
 
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, subtitle }) {
   const [campaigns, setCampaigns] = useState([]);
 
   //   useEffect will run based on a specific condition, as we gave it fetchUrl as
@@ -20,7 +21,10 @@ function Row({ title, fetchUrl }) {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <Typography variant="h4">{title}</Typography>
+      <Typography variant="subtitle1">
+        {subtitle} <br />
+      </Typography>
       <div className="row__cards">
         {campaigns.map((campaign) => (
           <CampaignCard

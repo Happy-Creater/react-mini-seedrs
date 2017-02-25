@@ -6,7 +6,7 @@
 }
 
 .row__cards::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 
 .row {

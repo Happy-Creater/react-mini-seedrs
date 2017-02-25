@@ -23,7 +23,7 @@ function Header(props) {
     <AppBar
       position="static"
       inputProps={{ "aria-label": "search" }}
-      color="transparent"
+      color="secondary"
     >
       <Toolbar>
         <Typography variant="h6" className={classes.typographyStyles}>
