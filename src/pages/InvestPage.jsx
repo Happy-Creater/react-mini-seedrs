@@ -1,10 +1,11 @@
-import { Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import { campaignsAPI, investmentsAPI } from "../axios";
+import { campaignsAPI } from "../axios";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import LinearProgress from "../components/progress_indicator/LinearProgress";
 import Tabs from "../components/tab/Tab";
+import Invest from "../components/form/investForm";
 
 const useStyles = makeStyles({
   avatar: {
@@ -13,15 +14,27 @@ const useStyles = makeStyles({
     borderRadius: "50%",
     objectFit: "scale-down",
     border: "0.5px solid #e3e3e3",
-    padding: "3px",
-    margin: "17px",
+    padding: "5px",
+    margin: "15px",
     backgroundColor: "white",
   },
-  title: {
+  titleFlex: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "flex-start",
+  },
+  infoFlex: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    margin: "5px 25px",
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(1.3)",
   },
   progress: {
     padding: "5px 25px 20px",
@@ -30,6 +43,7 @@ const useStyles = makeStyles({
 
 function InvestPage(props) {
   const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
 
   const { id } = props.match.params;
 
@@ -53,24 +67,55 @@ function InvestPage(props) {
       <Grid item container>
         <Grid item xs={false} md={2} />
         <Grid item xs={12} md={8}>
-          <div className={classes.title}>
+          <div className={classes.titleFlex}>
             {" "}
             <img
               src={campaign.image}
               alt={campaign.name}
               className={classes.avatar}
             />
-            <Typography variant="h4">{campaign.name}</Typography>
+            <div>
+              {" "}
+              <Typography variant="h4">{campaign.name}</Typography>
+              <Typography variant="h6">
+                Target of £{campaign.target_amount}
+              </Typography>
+            </div>
+          </div>
+          <div className={classes.infoFlex}>
+            {campaign.is_open ? (
+              <Invest
+                name={campaign.name}
+                campaignId={id.substring(1)}
+                multiple={campaign.investment_multiple}
+                className={classes.cta}
+                campaignName={campaign.name}
+              />
+            ) : (
+              <Button
+                variant="outlined"
+                disabled={true}
+                className={classes.cta}
+              >
+                Closed
+              </Button>
+            )}
+            <Typography variant="body2">{bull}</Typography>
+            <Typography variant="body2">{campaign.sector}</Typography>
+            <Typography variant="body2">{bull}</Typography>
+            <Typography variant="body2">{campaign.country}</Typography>
+            <Typography variant="body2">{bull}</Typography>
+            <Typography variant="body2">
+              {campaign.investment_count} investments
+            </Typography>
           </div>
           <div className={classes.progress}>
             <LinearProgress
               value={campaign.percentage_raised}
               color="primary"
             />
-            <Tabs itemOne="Company" itemTwo="Team" itemThree="Documents" />
-            {/* Tabs component with: Idea - Key Information - Team - Investors - Documents */}
-            {/* Lorem ipsum for all tabs except Investors: try to get investor names and amounts listed (can we though?? there is no get api for invs) */}
           </div>
+          <Tabs itemOne="Company" itemTwo="Team" itemThree="Documents" />
         </Grid>
 
         <Grid item xs={false} md={2} />

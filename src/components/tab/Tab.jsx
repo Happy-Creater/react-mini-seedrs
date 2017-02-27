@@ -77,9 +77,9 @@ export default function FullWidthTabs() {
           aria-label="full width tabs "
           centered
         >
-          <Tab label="Item One" {...a11yProps(0)} className={classes.tab} />
-          <Tab label="Item Two" {...a11yProps(1)} className={classes.tab} />
-          <Tab label="Item Three" {...a11yProps(2)} className={classes.tab} />
+          <Tab label="Business" {...a11yProps(0)} className={classes.tab} />
+          <Tab label="Team" {...a11yProps(1)} className={classes.tab} />
+          <Tab label="Documents" {...a11yProps(2)} className={classes.tab} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -131,10 +131,69 @@ export default function FullWidthTabs() {
           </Typography>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+          <Typography variant="body1" gutterBottom align="justify">
+            Cupcake ipsum dolor sit. Amet cookie caramels I love powder
+            chocolate cake tiramisu dragée jelly. Jelly beans pudding jelly
+            beans biscuit gingerbread marshmallow marshmallow apple pie cake.
+            Marshmallow I love dessert. I love jujubes I love sweet pastry ice
+            cream gummi bears powder. <br />
+            <br />I love gummi bears liquorice bear claw candy donut wafer
+            tootsie roll lollipop. Donut macaroon ice cream. Sugar plum dragée
+            gingerbread sugar plum tart. Cupcake brownie toffee I love toffee.
+            Sweet roll bear claw donut bonbon cotton candy danish pudding I
+            love. Muffin wafer lollipop I love. Cheesecake apple pie macaroon
+            apple pie ice cream. Cookie lollipop chupa chups sweet roll tart
+            gummies I love bonbon liquorice. I love I love pie. Powder marzipan
+            jujubes ice cream muffin I love chupa chups chocolate. Tart
+            liquorice lollipop topping muffin. Cake tiramisu topping marzipan
+            cupcake muffin. Pie toffee cheesecake marshmallow chocolate
+            caramels. Pudding pudding sweet roll apple pie pudding chocolate
+            chupa chups dessert pie. Halvah pie fruitcake powder gummies
+            brownie. <br />
+            <br />
+            Bear claw liquorice sweet halvah marzipan tootsie roll. Jujubes
+            halvah ice cream sugar plum I love. Cookie sugar plum danish brownie
+            chupa chups tootsie roll chupa chups. Croissant soufflé I love
+            croissant lollipop marshmallow. Dessert jelly lollipop sesame snaps
+            I love jelly. Tart pastry chocolate cake I love. I love gingerbread
+            danish topping tart sweet dessert I love pie. Halvah pastry sesame
+            snaps jelly. Biscuit I love brownie pudding. Jelly beans tart
+            liquorice cookie cotton candy. Cake pastry jelly beans cake I love
+            jelly beans. Candy canes gummies I love. Dessert gummi bears pastry.
+            Icing cotton candy I love I love pudding tart tart macaroon
+            marshmallow. Marzipan I love lemon drops jelly-o caramels tootsie
+            roll. Jelly-o tiramisu cotton candy bear claw cookie pudding. I love
+            cupcake pastry gingerbread chocolate bar bonbon cheesecake croissant
+            croissant. Marzipan brownie donut lollipop candy canes marzipan
+            cupcake caramels sweet. <br />
+            <br />
+            Sugar plum candy brownie sweet croissant halvah. Lollipop lollipop
+            gingerbread halvah caramels cake chocolate bar lemon drops. Topping
+            chocolate bar jujubes powder. Lollipop sweet gummi bears oat cake.
+          </Typography>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+          <Typography variant="body1" gutterBottom align="justify">
+            Occupy 3 wolf moon vegan keytar kale chips live-edge, edison bulb
+            taiyaki iceland etsy tumblr irony disrupt tbh godard. Roof party
+            venmo craft beer irony brunch godard. <br />
+            <br />
+            PBR&B selfies sustainable, iceland vice humblebrag:
+            <br />
+            <ul>
+              <li>
+                Truffaut master cleanse hell of a mustache kale heroes and
+                vaporware.
+              </li>
+              <li>Meditation unicorn cornhole pug blog four dollar toast.</li>
+              <li>
+                Heirloom fanny pack polaroid aesthetic chia hella umami
+                post-ironic raw denim jacket
+              </li>
+            </ul>
+            You probably haven't heard of them dreamcatcher salvia pour-over,
+            trust fund tattooed XOXO single-origin coffee yuccie.
+          </Typography>
         </TabPanel>
       </SwipeableViews>
     </div>

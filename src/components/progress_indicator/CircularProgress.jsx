@@ -23,7 +23,7 @@ function CircularProgressWithLabel(props) {
         <Typography
           variant="caption"
           component="div"
-          color="textSecondary"
+          color="primary"
         >{`${Math.round(props.value)}%`}</Typography>
       </Box>
     </Box>

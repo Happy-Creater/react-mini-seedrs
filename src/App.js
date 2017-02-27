@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
   Redirect,
 } from "react-router-dom";
 
@@ -41,11 +40,43 @@ function App() {
         // main: "#FFFFFF",
       },
       text: {
+        // primary: "#FFFFFF",
         secondary: "#FFFFFF",
       },
     },
     typography: {
       fontFamily: "'Lato', sans-serif",
+    },
+    overrides: {
+      MuiInput: {
+        label: {
+          "&::placeholder": {
+            color: "blue",
+          },
+          color: "orange",
+        },
+        input: {
+          "&::placeholder": {
+            color: "pink",
+          },
+          color: "#222222", // if you also want to change the color of the input, this is the prop you'd use
+        },
+      },
+      MuiFormHelperText: {
+        root: {
+          color: "#9E9E9E",
+        },
+      },
+      MuiInputLabel: {
+        animated: {
+          color: "#9E9E9E",
+        },
+      },
+      // MuiTypography: {
+      //   colorTextSecondary: {
+      //     color: "#FFFFFF",
+      //   },
+      // },
     },
   });
 
@@ -64,6 +95,7 @@ function App() {
       },
       text: {
         secondary: "#FFFFFF",
+        // primary: "#FFFFFF",
       },
     },
     typography: {
@@ -74,8 +106,8 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? crowdcubeTheme : seedrsTheme}>
       <Paper style={{ height: "100%" }}>
-        <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
         <Router>
+          <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           <Switch>
             <Route exact path="/" component={CampaignsPage} />
             <Route exact path="/:id" component={InvestPage} />

@@ -1,6 +1,8 @@
 import {
   AppBar,
+  Button,
   Checkbox,
+  Link,
   makeStyles,
   Toolbar,
   Typography,
@@ -27,15 +29,17 @@ function Header(props) {
     >
       <Toolbar>
         <Typography variant="h6" className={classes.typographyStyles}>
-          Mini
-          <span
-            style={{
-              color: theme.palette.primary.main,
-              fontWeight: theme.typography.fontWeightBold,
-            }}
-          >
-            {props.checked ? "Crowdcube" : "Seedrs"}
-          </span>
+          <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+            Mini
+            <span
+              style={{
+                color: theme.palette.primary.main,
+                fontWeight: theme.typography.fontWeightBold,
+              }}
+            >
+              {props.checked ? "Crowdcube" : " Seedrs"}
+            </span>
+          </a>
         </Typography>
 
         <Checkbox

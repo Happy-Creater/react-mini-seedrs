@@ -1,8 +1,6 @@
 import React from "react";
-import Header from "../components/header/Header";
 import Row from "../components/row/Row";
 import requests from "../requests";
-import { Grid } from "@material-ui/core";
 import Banner from "../components/banner/Banner";
 
 function CampaignsPage() {
