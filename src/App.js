@@ -72,11 +72,6 @@ function App() {
           color: "#9E9E9E",
         },
       },
-      // MuiTypography: {
-      //   colorTextSecondary: {
-      //     color: "#FFFFFF",
-      //   },
-      // },
     },
   });
 
@@ -95,7 +90,6 @@ function App() {
       },
       text: {
         secondary: "#FFFFFF",
-        // primary: "#FFFFFF",
       },
     },
     typography: {

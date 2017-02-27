@@ -9,6 +9,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import CurrencySelect from "./currencySelect";
 import { investmentsAPI } from "../../axios";
 import { makeStyles } from "@material-ui/styles";
+import { Alert } from "@material-ui/lab";
+import { Snackbar } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   formText: {
@@ -19,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
 export default function FormDialog({ campaignId, multiple, campaignName }) {
   const classes = useStyles();
 
+  //STATES
+
   const [open, setOpen] = useState(false);
 
   const [inputs, setInputs] = useState({
@@ -28,6 +32,13 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
     currency: "",
   });
 
+  const [investmentStatus, setInvestmentStatus] = useState({
+    isInvalid: false,
+    isSuccessful: false,
+    errorMessage: "",
+  });
+
+  //HANDLERS
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -43,27 +54,44 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
     });
   };
 
+  const handleInvalid = () => {
+    setInvestmentStatus({
+      ...investmentStatus,
+      isInvalid: false,
+    });
+  };
+
   const handleInvest = (e) => {
     e.preventDefault();
     console.log(inputs);
     investmentsAPI
-      .post(
-        "",
-        inputs
-        //,   {
-        //     headers: { "Content-Type": "application/json" },
-        //   }
-      )
+      .post("", inputs)
       .then((response) => {
         console.log(response);
       })
       .catch((error) => {
-        console.log(`Error encountered: ${error}`);
+        setInvestmentStatus({
+          ...investmentStatus,
+          isInvalid: true,
+          errorMessage: error.response.data.message,
+        });
       });
   };
 
+  //RETURN
+
   return (
     <div>
+      <Snackbar
+        open={investmentStatus.isInvalid}
+        autoHideDuration={6000}
+        onClose={handleInvalid}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={handleInvalid} severity="error">
+          {investmentStatus.errorMessage}
+        </Alert>
+      </Snackbar>
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
         Invest
       </Button>
