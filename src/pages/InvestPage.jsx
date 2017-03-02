@@ -55,7 +55,6 @@ function InvestPage(props) {
   useEffect(() => {
     async function fetchData() {
       const request = await campaignsAPI.get(id.substring(1));
-      console.table(request.data);
       setCampaign(request.data);
       return request;
     }
@@ -111,7 +110,7 @@ function InvestPage(props) {
           </div>
           <div className={classes.progress}>
             <LinearProgress
-              value={campaign.percentage_raised}
+              value={parseInt(campaign.percentage_raised)}
               color="primary"
             />
           </div>

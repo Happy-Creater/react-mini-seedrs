@@ -1,8 +1,6 @@
 import {
   AppBar,
-  Button,
   Checkbox,
-  Link,
   makeStyles,
   Toolbar,
   Typography,
@@ -19,7 +17,6 @@ const useStyles = makeStyles(() => ({
 function Header(props) {
   const classes = useStyles();
   const theme = useTheme();
-  console.log(theme);
 
   return (
     <AppBar

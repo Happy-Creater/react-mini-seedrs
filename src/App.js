@@ -28,19 +28,14 @@ function App() {
       primary: {
         main: "#7FBB30",
         light: "#23a393",
-        // light: "#a06ee1",
-        // light: "#64e291",
       },
       secondary: {
-        // main: "#F5F6F8",
         main: "#FFFFFF",
       },
       background: {
         paper: "#F5F5F5",
-        // main: "#FFFFFF",
       },
       text: {
-        // primary: "#FFFFFF",
         secondary: "#FFFFFF",
       },
     },
@@ -54,12 +49,6 @@ function App() {
             color: "blue",
           },
           color: "orange",
-        },
-        input: {
-          "&::placeholder": {
-            color: "pink",
-          },
-          color: "#222222", // if you also want to change the color of the input, this is the prop you'd use
         },
       },
       MuiFormHelperText: {
@@ -100,8 +89,9 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? crowdcubeTheme : seedrsTheme}>
       <Paper style={{ height: "100%" }}>
+        <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+
         <Router>
-          <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           <Switch>
             <Route exact path="/" component={CampaignsPage} />
             <Route exact path="/:id" component={InvestPage} />
