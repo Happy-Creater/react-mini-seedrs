@@ -10,26 +10,37 @@ import CurrencySelect from "./currencySelect";
 import { investmentsAPI } from "../../axios";
 import { makeStyles } from "@material-ui/styles";
 import { Alert } from "@material-ui/lab";
-import { Snackbar } from "@material-ui/core";
+import { Snackbar, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import SocialShare from "./Socials";
 
+//STYLES
 const useStyles = makeStyles((theme) => ({
   formText: {
     color: theme.palette.text.primary,
   },
   formButtons: {
-    margin: "10px",
+    margin: "15px 10px",
+  },
+  formButton: {
+    margin: "15px",
+  },
+
+  socialIcons: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
 }));
 
+//FUNCTIONAL COMPONENT
 export default function FormDialog({ campaignId, multiple, campaignName }) {
   //OTHER HOOKS
   const classes = useStyles();
   let history = useHistory();
 
   //STATE HOOKS
-
   const [open, setOpen] = useState(false);
 
   const [inputs, setInputs] = useState({
@@ -93,16 +104,7 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
       });
   };
 
-  const handleShare = () => {
-    // setInvestmentStatus({
-    //   ...investmentStatus,
-    //   isSuccessful: false,
-    // });
-    // history.push("/");
-  };
-
-  //RETURN
-
+  //OUTPUT
   return (
     <div>
       <Snackbar
@@ -136,8 +138,21 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
         <DialogContent>
           {investmentStatus.isSuccessful ? (
             <DialogContentText className={classes.formText}>
-              You successfully invested £{inputs.investment_amount} in{" "}
-              {campaignName} !
+              <Typography variant="h6" gutterBottom>
+                You successfully invested £{inputs.investment_amount} in{" "}
+                {campaignName} !
+                <br />
+                <span role="img" aria-label="raising-hands">
+                  🙌
+                </span>
+              </Typography>
+
+              <Typography variant="body1" gutterBottom>
+                Share the love on socials
+              </Typography>
+              <div className={classes.socialIcons}>
+                <SocialShare />
+              </div>
             </DialogContentText>
           ) : (
             <div>
@@ -171,24 +186,13 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
         </DialogContent>
         <DialogActions>
           {investmentStatus.isSuccessful ? (
-            <div>
-              <Button
-                onClick={handleSuccessful}
-                className={(classes.formText, classes.formButtons)}
-                variant="outlined"
-              >
-                All Campaigns
-              </Button>
-              {/* <Button
-                onClick={handleShare}
-                color="primary"
-                variant="contained"
-                className={classes.formButtons}
-              >
-                Share on Socials
-              </Button> */}
-              <SocialShare />
-            </div>
+            <Button
+              onClick={handleSuccessful}
+              className={(classes.formText, classes.formButton)}
+              variant="contained"
+            >
+              Continue Exploring
+            </Button>
           ) : (
             <div>
               <Button

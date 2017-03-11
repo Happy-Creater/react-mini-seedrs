@@ -89,9 +89,8 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? crowdcubeTheme : seedrsTheme}>
       <Paper style={{ height: "100%" }}>
-        <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
-
         <Router>
+          <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           <Switch>
             <Route exact path="/" component={CampaignsPage} />
             <Route exact path="/:id" component={InvestPage} />

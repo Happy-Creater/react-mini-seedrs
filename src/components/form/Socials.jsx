@@ -16,7 +16,8 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
   socialIcons: {
-    height: "55px",
+    height: "50px",
+    marginRight: "5px",
   },
 }));
 
@@ -26,8 +27,8 @@ function SocialShare() {
   const url = String(window.location);
   const title = "Invest with me on Mini Seedrs";
   const shareImage =
-    "https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/MiniSeedrsHome.png?raw=true";
-  const size = "2.5rem";
+    "https://raw.githubusercontent.com/filippomassarelli/react-mini-seedrs/master/public/MiniSeedrs-Home.png";
+  const size = "2rem";
 
   const ShareList = Passers({
     url,
@@ -41,29 +42,33 @@ function SocialShare() {
   return (
     <ShareList>
       <FacebookShareButton quote={title}>
-        <FacebookIcon size={size} />
+        <FacebookIcon size={size} round />
       </FacebookShareButton>
 
       <TwitterShareButton title={title}>
-        <TwitterIcon size={size} />
+        <TwitterIcon size={size} round />
       </TwitterShareButton>
 
       <WhatsappShareButton title={title} separator=":: ">
-        <WhatsappIcon size={size} />
+        <WhatsappIcon size={size} round />
       </WhatsappShareButton>
 
-      <LinkedinShareButton title={title} windowWidth={750} windowHeight={600}>
-        <LinkedinIcon size={size} />
+      <LinkedinShareButton
+        url="https://www.seedrs.com/" //Linkedin sharing API has changed and now requires specific meta tags in website, using seedrs for now
+        title={title}
+        windowWidth={750}
+        windowHeight={600}
+      >
+        <LinkedinIcon size={size} round />
       </LinkedinShareButton>
 
       <PinterestShareButton
         url={String(window.location)}
-        media="https://images.indianexpress.com/2019/04/cat_759getty.jpg"
-        // media={`${shareImage}`}
+        media={`${shareImage}`}
         windowWidth={1000}
         windowHeight={730}
       >
-        <PinterestIcon size={size} />
+        <PinterestIcon size={size} round />
       </PinterestShareButton>
     </ShareList>
   );

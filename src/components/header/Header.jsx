@@ -7,6 +7,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { Brightness2, WbSunny } from "@material-ui/icons";
+import Search from "../Search/Search";
 
 const useStyles = makeStyles(() => ({
   typographyStyles: {
@@ -38,6 +39,7 @@ function Header(props) {
             </span>
           </a>
         </Typography>
+        <Search />
 
         <Checkbox
           checked={props.checked}
