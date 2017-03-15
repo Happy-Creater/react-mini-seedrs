@@ -48,7 +48,10 @@ function CampaignCard(props) {
   const classes = useStyles();
   const theme = useTheme();
   return (
-    <Link to={{ pathname: `/:${props.id}` }} style={{ textDecoration: "none" }}>
+    <Link
+      to={{ pathname: `/:${props.campaignId}` }}
+      style={{ textDecoration: "none" }}
+    >
       <Card
         className={classes.root}
         style={{ backgroundColor: theme.palette.secondary.main }}

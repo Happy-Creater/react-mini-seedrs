@@ -49,9 +49,6 @@ function InvestPage(props) {
 
   const [campaign, setCampaign] = useState([]);
 
-  //   useEffect will run based on a specific condition, as we gave it fetchUrl as
-  //   condition it will run when the component loads and everytime fetchUrl changes
-
   useEffect(() => {
     async function fetchData() {
       const request = await campaignsAPI.get(id.substring(1));

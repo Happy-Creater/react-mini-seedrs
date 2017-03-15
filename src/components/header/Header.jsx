@@ -22,7 +22,7 @@ function Header(props) {
   return (
     <AppBar
       position="static"
-      inputProps={{ "aria-label": "search" }}
+      inputprops={{ "aria-label": "search" }}
       color="secondary"
     >
       <Toolbar>
