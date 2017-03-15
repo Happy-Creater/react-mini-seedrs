@@ -9,16 +9,20 @@ import {
 import { Brightness2, WbSunny } from "@material-ui/icons";
 import Search from "../search/Search";
 
+//STYLES
 const useStyles = makeStyles(() => ({
   typographyStyles: {
     flex: 1,
   },
 }));
 
+//COMPONENT
 function Header(props) {
+  //HOOKS
   const classes = useStyles();
   const theme = useTheme();
 
+  //OUTPUT
   return (
     <AppBar
       position="static"

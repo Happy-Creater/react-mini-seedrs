@@ -1,55 +1,62 @@
-// import { jest } from "@jest/globals";
-
 import React from "react";
-import { render } from "@testing-library/react";
-import Banner from "./Banner";
-import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-import { mount, shallow } from "enzyme";
-import { createShallow } from "@material-ui/core/test-utils";
-// import { createMount } from "@material-ui/core/test-utils";
-import { screen } from "@testing-library/dom";
+import { cleanup, render } from "@testing-library/react";
+import { shallow } from "enzyme";
+import { Button, Grid, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import { createMuiTheme } from "@material-ui/core";
-import { Router } from "react-router-dom";
+import Banner from "./Banner";
 
-describe("<Banner /> ", () => {
-  it('should render "Hey explorer" greeting', () => {
-    const shallow = createShallow();
-    const wrapper = shallow(
-      <MuiThemeProvider
-        theme={createMuiTheme({
-          spacing: 4,
-          palette: {
-            primary: {
-              main: "#007bff",
-            },
-          },
-        })}
-      >
-        <Router>
-          <Banner />
-        </Router>
+let myTheme;
+
+beforeEach(() => {
+  myTheme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#7FBB30",
+      },
+    },
+  });
+});
+
+afterEach(cleanup);
+
+describe("<Banner />", () => {
+  it("renders without crashing", () => {
+    shallow(
+      <MuiThemeProvider theme={myTheme}>
+        <Banner />
       </MuiThemeProvider>
     );
-    render(wrapper);
-    // wrapper.root.getByText(/Hey explorer/);
-    // expect(screen.getByText("explorer")).toBeVisible();
   });
 
-  // it("renders without crashing", () => {
-  //   // const mount = createMount();
-  //   const wrapper = mount(
-  //     <MuiThemeProvider
-  //       theme={{
-  //         palette: {
-  //           primary: {
-  //             main: "#7FBB30",
-  //           },
-  //         },
-  //       }}
-  //     >
-  //       <Banner />
-  //     </MuiThemeProvider>
-  //   );
-  //   render(wrapper);
-  // });
+  //NOTE THAT WE ARE MAKING THE REAL API CALL IN THE TESTS... WE COULD LOOK INTO MOCKING UseEffect TO SOLVE THIS
+  it("once loaded (async) has 6 MUI Grid items, 3 MUI Typography, 1 router Link and 1 MUI Button", () => {
+    const wrapper = shallow(
+      <MuiThemeProvider theme={myTheme}>
+        <Banner />
+      </MuiThemeProvider>
+    );
+
+    setTimeout(() => {
+      expect(wrapper.find(Grid).length).toBe(6);
+      expect(wrapper.find(Typography).length).toBe(3);
+      expect(wrapper.find(Link).length).toBe(1);
+      expect(wrapper.find(Button).length).toBe(1);
+    }, 1000);
+  });
+
+  it("is responsive", () => {
+    const wrapper = shallow(
+      <MuiThemeProvider theme={myTheme}>
+        <Banner />
+      </MuiThemeProvider>
+    );
+    setTimeout(() => {
+      expect(wrapper.find(Grid).at(2).prop("xs").exists()).toBe(true);
+      expect(wrapper.find(Grid).at(3).prop("xs").exists()).toBe(true);
+      expect(wrapper.find(Grid).at(4).prop("xs").exists()).toBe(true);
+      expect(wrapper.find(Grid).at(5).prop("xs").exists()).toBe(true);
+    }, 1000);
+  });
 });

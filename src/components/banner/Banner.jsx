@@ -7,6 +7,21 @@ import { Link } from "react-router-dom";
 import { campaignsAPI } from "../../axios";
 import requests from "../../requests";
 
+//DATA
+const synonymOfChanging = [
+  "changing",
+  "revolutionazing",
+  "disrupting",
+  "improving",
+  "revamping",
+  "upgrading",
+  "transforming",
+  "enhancing",
+  "modernizing",
+  "the poster child of",
+  "the rising star of",
+];
+
 //STYLES
 const useStyles = makeStyles({
   heroText: {
@@ -19,10 +34,10 @@ const useStyles = makeStyles({
   },
 });
 
+//COMPONENT
 function Banner() {
   //OTHER HOOKS
   const classes = useStyles();
-
   const theme = useTheme();
 
   //STATE HOOKS
@@ -38,21 +53,6 @@ function Banner() {
     }
     fetchData();
   }, []);
-
-  //OTHER
-  const synonymOfChanging = [
-    "changing",
-    "revolutionazing",
-    "disrupting",
-    "improving",
-    "revamping",
-    "upgrading",
-    "transforming",
-    "enhancing",
-    "modernizing",
-    "the poster child of",
-    "the rising star of",
-  ];
 
   //OUTPUT
   return (

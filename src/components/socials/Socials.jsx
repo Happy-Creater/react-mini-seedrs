@@ -14,6 +14,7 @@ import {
 } from "react-share";
 import { makeStyles } from "@material-ui/styles";
 
+//STYLES
 const useStyles = makeStyles((theme) => ({
   socialIcons: {
     height: "50px",
@@ -21,15 +22,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//COMPONENT
 function SocialShare() {
+  //HOOKS
   const classes = useStyles();
 
+  // DATA
   const url = String(window.location);
   const title = "Invest with me on Mini Seedrs";
   const shareImage =
     "https://raw.githubusercontent.com/filippomassarelli/react-mini-seedrs/master/public/MiniSeedrs-Home.png";
-  const size = "2rem";
 
+  const size = "2rem";
   const ShareList = Passers({
     url,
     children: <t />,
@@ -39,6 +43,7 @@ function SocialShare() {
     title: `Share ${String(window.location)}`,
   })("li");
 
+  //OUTPUT
   return (
     <ShareList>
       <FacebookShareButton quote={title}>

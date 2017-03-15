@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import CircularProgressWithLabel from "../progress/CircularProgress";
 import { BrowserRouter, Link } from "react-router-dom";
 
+//STYLES
 const useStyles = makeStyles({
   root: {
     minWidth: "250px",
@@ -21,7 +22,6 @@ const useStyles = makeStyles({
       transform: "scale(1.07)",
     },
   },
-
   cardHeader: {
     display: "flex",
     flexDirection: "row",
@@ -43,9 +43,13 @@ const useStyles = makeStyles({
   },
 });
 
+//COMPONENT
 function CampaignCard(props) {
+  //HOOKS
   const classes = useStyles();
   const theme = useTheme();
+
+  //OUTPUT
   return (
     <BrowserRouter>
       <Link

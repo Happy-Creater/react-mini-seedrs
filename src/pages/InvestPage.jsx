@@ -5,7 +5,8 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import LinearProgress from "../components/progress/LinearProgress";
 import Tabs from "../components/tab/Tab";
-import Invest from "../components/form/investForm";
+import Invest from "../components/form/InvestForm";
+import tabsText from "../tabsText";
 
 const useStyles = makeStyles({
   avatar: {
@@ -111,7 +112,12 @@ function InvestPage(props) {
               color="primary"
             />
           </div>
-          <Tabs itemOne="Company" itemTwo="Team" itemThree="Documents" />
+          <Tabs
+            itemOne="Company"
+            itemTwo="Team"
+            itemThree="Documents"
+            tabsText={tabsText}
+          />
         </Grid>
 
         <Grid item xs={false} md={2} />
