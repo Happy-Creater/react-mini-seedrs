@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { campaignsAPI } from "../axios";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import LinearProgress from "../components/progress_indicator/LinearProgress";
+import LinearProgress from "../components/progress/LinearProgress";
 import Tabs from "../components/tab/Tab";
 import Invest from "../components/form/investForm";
 

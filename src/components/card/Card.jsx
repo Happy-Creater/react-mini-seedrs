@@ -4,7 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import CircularProgressWithLabel from "../progress_indicator/CircularProgress";
+import CircularProgressWithLabel from "../progress/CircularProgress";
 import { BrowserRouter, Link } from "react-router-dom";
 
 const useStyles = makeStyles({

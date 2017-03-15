@@ -3,11 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/styles": "^4.11.3",
+    "@material-ui/utils": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
@@ -46,6 +59,9 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
     "jest-dom": "^4.0.0",
     "react-test-renderer": "^17.0.1"
   }
