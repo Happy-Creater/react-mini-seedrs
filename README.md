@@ -1,8 +1,8 @@
-# Mini Seedrs has a UI !
+# Mini Seedrs is now easy to use !
 
-( :honeybee: checkout our API at [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) )
+( :honeybee: if you still prefer the hard way read our APIs at [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) )
 
-<img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" align="center"
+<img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" right="center"
      alt="flying saucer" width="350">
 
 ## Introduction
