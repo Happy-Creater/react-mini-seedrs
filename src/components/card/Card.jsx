@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import CircularProgressWithLabel from "../progress/CircularProgress";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //STYLES
 const useStyles = makeStyles({
@@ -51,59 +51,49 @@ function CampaignCard(props) {
 
   //OUTPUT
   return (
-    <BrowserRouter>
-      <Link
-        to={{ pathname: `/:${props.campaignId}` }}
-        style={{ textDecoration: "none" }}
+    <Link
+      to={{ pathname: `/:${props.campaignId}` }}
+      style={{ textDecoration: "none" }}
+    >
+      <Card
+        className={classes.root}
+        style={{ backgroundColor: theme.palette.secondary.main }}
       >
-        <Card
-          className={classes.root}
-          style={{ backgroundColor: theme.palette.secondary.main }}
-        >
-          <CardContent>
-            <div className={classes.cardHeader}>
-              <Typography
-                className={classes.title}
-                color="inherit"
-                gutterBottom
-              >
-                {props.sector}
-              </Typography>
+        <CardContent>
+          <div className={classes.cardHeader}>
+            <Typography className={classes.title} color="inherit" gutterBottom>
+              {props.sector}
+            </Typography>
 
-              <CircularProgressWithLabel
-                variant="determinate"
-                value={props.percentageRaised}
-              />
-            </div>
+            <CircularProgressWithLabel
+              variant="determinate"
+              value={props.percentageRaised}
+            />
+          </div>
+          <div>
             <div>
-              <div>
-                <Typography variant="h5" component="h2">
-                  {props.name}
-                </Typography>
-                <Typography
-                  className={classes.pos}
-                  color="inherit"
-                  gutterBottom
-                >
-                  is looking for{" "}
-                  <strong>£{props.targetAmount.toLocaleString()}</strong>
-                </Typography>
-              </div>
-              <img
-                src={props.image}
-                alt={props.name}
-                className={classes.companyLogo}
-              />
+              <Typography variant="h5" component="h2">
+                {props.name}
+              </Typography>
+              <Typography className={classes.pos} color="inherit" gutterBottom>
+                is looking for{" "}
+                <strong>£{props.targetAmount.toLocaleString()}</strong>
+              </Typography>
             </div>
-          </CardContent>
-          <Typography align="center">
-            <Button variant="outlined" color="primary" size="small">
-              Review Campaign
-            </Button>
-          </Typography>
-        </Card>
-      </Link>
-    </BrowserRouter>
+            <img
+              src={props.image}
+              alt={props.name}
+              className={classes.companyLogo}
+            />
+          </div>
+        </CardContent>
+        <Typography align="center">
+          <Button variant="outlined" color="primary" size="small">
+            Review Campaign
+          </Button>
+        </Typography>
+      </Card>
+    </Link>
   );
 }
 

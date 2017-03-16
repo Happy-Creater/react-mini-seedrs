@@ -40,7 +40,7 @@ function Row({ title, fetchUrl, subtitle }) {
       return request;
     }
     fetchData();
-  }, []);
+  }, [fetchUrl]);
 
   //OUTPUT
   return (
