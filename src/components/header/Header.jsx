@@ -7,26 +7,22 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { Brightness2, WbSunny } from "@material-ui/icons";
-import Search from "../search/Search";
+import Search2 from "../Search/Search2";
 
-//STYLES
 const useStyles = makeStyles(() => ({
   typographyStyles: {
     flex: 1,
   },
 }));
 
-//COMPONENT
 function Header(props) {
-  //HOOKS
   const classes = useStyles();
   const theme = useTheme();
 
-  //OUTPUT
   return (
     <AppBar
       position="static"
-      inputprops={{ "aria-label": "search" }}
+      inputProps={{ "aria-label": "search" }}
       color="secondary"
     >
       <Toolbar>
@@ -43,7 +39,7 @@ function Header(props) {
             </span>
           </a>
         </Typography>
-        <Search />
+        <Search2 />
 
         <Checkbox
           checked={props.checked}

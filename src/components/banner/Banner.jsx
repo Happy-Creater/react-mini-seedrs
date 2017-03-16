@@ -1,5 +1,5 @@
 import { Button, Grid, Typography } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/styles";
+import { useTheme } from "@material-ui/styles";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -7,43 +7,23 @@ import { Link } from "react-router-dom";
 import { campaignsAPI } from "../../axios";
 import requests from "../../requests";
 
-//DATA
-const synonymOfChanging = [
-  "changing",
-  "revolutionazing",
-  "disrupting",
-  "improving",
-  "revamping",
-  "upgrading",
-  "transforming",
-  "enhancing",
-  "modernizing",
-  "the poster child of",
-  "the rising star of",
-];
-
-//STYLES
-const useStyles = makeStyles({
-  heroText: {
-    height: "100%",
-    display: "flex",
-    maxWidth: "50%",
-    flexDirection: "column",
-    justifyContent: "center",
-    margin: "15px 0 50px 35px",
-  },
-});
-
-//COMPONENT
 function Banner() {
-  //OTHER HOOKS
-  const classes = useStyles();
   const theme = useTheme();
-
-  //STATE HOOKS
+  console.log(theme.palette.primary.main);
   const [campaign, setCampaign] = useState([]);
-
-  //API REQUESTS
+  const synonymOfChanging = [
+    "changing",
+    "revolutionazing",
+    "disrupting",
+    "improving",
+    "revamping",
+    "upgrading",
+    "transforming",
+    "enhancing",
+    "modernizing",
+    "the poster child of",
+    "the rising star of",
+  ];
   useEffect(() => {
     async function fetchData() {
       const request = await campaignsAPI.get(requests.fetchOpen);
@@ -53,14 +33,21 @@ function Banner() {
     }
     fetchData();
   }, []);
-
-  //OUTPUT
   return (
     <Grid container direction="column">
       <Grid item container>
         <Grid item xs={false} md={1} lg={2} />
         <Grid item xs={10} md={7} lg={7}>
-          <div className={classes.heroText}>
+          <div
+            style={{
+              height: "100%",
+              display: "flex",
+              maxWidth: "50%",
+              flexDirection: "column",
+              justifyContent: "center",
+              margin: "15px 0 50px 35px",
+            }}
+          >
             <Typography variant="h5" color="inherit" gutterBottom>
               Hey explorer!
             </Typography>

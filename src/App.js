@@ -5,7 +5,6 @@ import {
   Route,
   Switch,
   Redirect,
-  withRouter,
 } from "react-router-dom";
 
 //Pages
@@ -15,15 +14,12 @@ import InvestPage from "./pages/InvestPage";
 import { ThemeProvider, createMuiTheme, Paper } from "@material-ui/core";
 import { useState } from "react";
 import Header from "./components/header/Header";
-
-//STYLES
 <link rel="preconnect" href="https://fonts.gstatic.com"></link>;
 <link
   href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:wght@100;200;300;400;500&display=swap"
   rel="stylesheet"
 ></link>;
 
-//CUSTOM THEMES TO OVERRIDE MUI THEME
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -96,9 +92,9 @@ function App() {
         <Router>
           <Header checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
           <Switch>
-            <Route exact path="/" component={withRouter(CampaignsPage)} />
-            <Route exact path="/:id" component={withRouter(InvestPage)} />
-            <Route exact path="/404" component={withRouter(NotFoundPage)} />
+            <Route exact path="/" component={CampaignsPage} />
+            <Route exact path="/:id" component={InvestPage} />
+            <Route exact path="/404" component={NotFoundPage} />
             <Redirect to="404" />
           </Switch>
         </Router>

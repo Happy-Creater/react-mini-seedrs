@@ -3,23 +3,21 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 
-//DATA
 const currencies = [
   {
     value: "GBP",
     label: "£",
   },
   {
-    value: "BTC",
-    label: "฿",
-  },
-  {
     value: "EUR",
     label: "€",
   },
+  {
+    value: "BTC",
+    label: "฿",
+  },
 ];
 
-//STYLES
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -29,21 +27,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//COMPONENT
 export default function MultilineTextFields(props) {
-  //OTHER HOOKS
   const classes = useStyles();
-
-  //STATE HOOKS
   const [currency, setCurrency] = React.useState("EUR");
 
-  //HANDLERS
   const handleChange = (event) => {
     setCurrency(event.target.value);
     props.onChange(event);
   };
 
-  //OUTPUT
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <TextField

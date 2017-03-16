@@ -6,13 +6,13 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Currency from "../currency/CurrencySelector";
+import CurrencySelect from "./currencySelect";
 import { investmentsAPI } from "../../axios";
 import { makeStyles } from "@material-ui/styles";
 import { Alert } from "@material-ui/lab";
 import { Snackbar, Typography } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import SocialShare from "../socials/Socials";
+import SocialShare from "./Socials";
 
 //STYLES
 const useStyles = makeStyles((theme) => ({
@@ -140,7 +140,7 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
             <DialogContentText className={classes.formText}>
               <Typography variant="h6" gutterBottom>
                 You successfully invested £{inputs.investment_amount} in{" "}
-                {campaignName}!
+                {campaignName} !
                 <br />
                 <span role="img" aria-label="raising-hands">
                   🙌
@@ -180,7 +180,7 @@ export default function FormDialog({ campaignId, multiple, campaignName }) {
                 onChange={handleChange}
                 color="inherit"
               />
-              <Currency onChange={handleChange} />
+              <CurrencySelect onChange={handleChange} />
             </div>
           )}
         </DialogContent>

@@ -8,7 +8,6 @@ import { useHistory } from "react-router-dom";
 import { Snackbar } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 
-//STYLES
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -42,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//COMPONENT
 export default function SearchAppBar() {
   //OTHER HOOKS
   let history = useHistory();

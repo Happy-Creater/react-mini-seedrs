@@ -4,19 +4,15 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-//STYLES
 const useStyles = makeStyles({
   root: {
     width: "100%",
   },
 });
 
-//COMPONENT
 function LinearProgressWithLabel(props) {
-  //HOOKS
   const classes = useStyles();
 
-  //OUTPUT
   return (
     <div className={classes.root}>
       <Box display="flex" alignItems="center">
