@@ -1,9 +1,7 @@
    <h1 align="center">
   Mini Seedrs is now easy to use ! 
   </h1>
-     <p align="center">( :honeybee: if you still prefer the hard way read our APIs at [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) )
-  <img src="https://raw.githubusercontent.com/downshift-js/downshift/master/other/public/logo/downshift.svg" alt="downshift logo" title="downshift logo" width="300">
-  <br>
+     <p align="center">( :honeybee: if you still prefer the hard way read our APIs at [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) )  <br>
      <img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" right="center"
      alt="flying saucer" width="350">
 </p>
