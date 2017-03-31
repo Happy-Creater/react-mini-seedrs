@@ -7,7 +7,8 @@
      alt="flying saucer" width="350">
 </p>
  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](#contributing)
-   ![AppVeyor tests](https://img.shields.io/appveyor/tests/filippomassarelli/react-mini-seedrs)
+ 
+ ![AppVeyor tests](https://img.shields.io/appveyor/tests/filippomassarelli/react-mini-seedrs)
 
 ## Introduction
 
@@ -25,120 +26,173 @@ Thank you for being awesome.
 
 - [Get started](#get-started)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
+  - [Install and Run](#install-and-run)
   - [Test](#test)
-  - [Run](#run)
-- [Campaign API](#campaign-api)
-
-
-
-
----
----
-This user interface has been bootstrapped with the help of the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) toolchain and the [Material-UI](https://material-ui.com/) design framework.   
+- [Built With](#built-with)
+- 
 
 ---
 
-Advanced
-- Theming
-mui themes. toggle icon. Crowdcube, Seedrs. Images.
-- Search
+## Get started
 
-# Getting Started with Create React App
+### Prerequisites
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Before you start, open your terminal and make sure you have [nodeJS](https://nodejs.org/en/) installed on your machine:
 
-## Available Scripts
+```
+$ node -v
+v14.15.4
+```
 
-In the project directory, you can run:
+We will also be using [Jest](https://jestjs.io/docs/en/getting-started) as our test runner so check you have it:
 
-### `yarn start`
+```
+$ jest -v
+26.6.3
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Mini Seedrs user interface is built to communicate with our APIs, which for now are only available if install our back-end app locally. So make sure you have either [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) or plain [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) repository cloned and their prerequisites installed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Install and Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First `cd` to your cloned Mini Seedrs back-end app and launch the server.
 
-### `yarn build`
+Then open another terminal window to clone this repo and `cd` into the directory:
+```
+git clone https://github.com/filippomassarelli/react-mini-seedrs.git
+cd react-mini-seedrs
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You should see the following folder structure:
+```
+react-mini-seedrs
+├── README.md
+├── package.json
+├── .gitignore
+├── index.js
+├── App.jsx
+├── App.test.js
+├── axios.js
+├── requests.js
+├── tabsText.js.jsx
+├── setupTests.js
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── MiniSeedrs-Homepage.png
+└── src
+    ├── components
+    │   ├── banner
+    │   │   ├── Banner.test.js
+    │   │   └── Banner.jsx
+    │   ├── card
+    │   │   ├── Card.test.js
+    │   │   └── Card.jsx  
+    │   ├── currency
+    │   │   ├── CurrencySelector.test.js
+    │   │   └── CurrencySelector.jsx    
+    │   ├── form
+    │   │   ├── form.test.js
+    │   │   └── form.jsx 
+    │   ├── header
+    │   │   ├── header.test.js
+    │   │   └── header.jsx      
+    │   ├── progress
+    │   │   ├── CircularProgress.test.js
+    │   │   ├── CircularProgress.jsx
+    │   │   ├── LinearProgress.test.js
+    │   │   └── LinearProgress.jsx     
+    │   ├── row
+    │   │   ├── row.test.js
+    │   │   └── row.jsx       
+    │   ├── search
+    │   │   ├── search.test.js
+    │   │   └── search.jsx    
+    │   ├── socials
+    │   │   ├── Socials.test.js
+    │   │   └── Socials.jsx   
+    │   └── tab
+    │       ├── Tab.test.js
+    │       └── Tab.jsx  
+    └── poages
+        ├── CampaignsPage.jsx
+        ├── InvestPage.jsx
+        └── Tab.jsxNotFoundPage.jsx
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Now install the project dependencies using node package manager:
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Check that the `package-lock.json` file and the `node_modules` folder has been added to the projects's root directory.
 
-### `yarn eject`
+Finally, run the start script with:
+```
+npm run start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If it doesn't do so automatically, open a browser tab and navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+And that's it, you are running Mini Seedrs in development mode :rocket:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Test
 
-## Learn More
+All our React Components have an accompanying suite of basic tests to minimise regression.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the test script in the terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm test
+```
 
-### Code Splitting
+You should expect 12 test suites comprising of a total of 36 tests to pass:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+Test Suites: 12 passed, 12 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        22.84 s
+Ran all test suites.
+```
+Jest will keep on running in the interactive watch mode, type `q` if you want to quit.
 
-### Analyzing the Bundle Size
+Testing is awesome, however this project only scratches the surface of react component testing, especially for our stateful components. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you are a test wizard and feel like [contributing](#contributing) you are very welcome Sir 🧙
 
 ---
----
 
-# TO BE INCLUDED
+## Built with
 
-## Testing
+### Tools and libraries
 
-Jest is the test runner that will run all the test files and enzyme is a library which provides useful assertions to test React components. 
+The Mini Seedrs user interface has been bootstrapped with the help of the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) toolchain and the [Material-UI](https://material-ui.com/) library.   
 
-## Testing Material UI components
+### Technologies
 
-We will also need to use @material-ui's Built-in API(s). Such as createMount, createShallow, createRender in order to use enzyme's shallow, mount & render. These APIs are built on top of enzyme, so you can't use enzyme directly for testing @material-ui.
+The major technologies are:
 
-Warning: An update to SearchAppBar inside a test was not wrapped in act(...)
-Don't worry about the act warning. It's going to get fixed in the next version of React. See [here](https://github.com/testing-library/react-testing-library/issues/281) for more info.
+- React JS
+- React Router
+- React Hooks
 
+Future work would include moving our components to Typescript, and centralise state management with Redux. 
 
-## Jest
-Jest is a JavaScript based test runner, which allows tests to be run blazing fast and in parallel. Jest also allows the ability for test to run in watch mode, hence changes to files will re-run the tests instantly as you are developing. It also generates code coverage reports which helps in understanding test coverage percentage.
-Snapshot testing is another great addition to Jest. Snapshot testing as its name suggests is a feature that allows components to be tested by taking a snapshot of what the component should look like internally once it has been rendered.
-## Enzyme
-Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components’ output. You can also manipulate, traverse, and in some ways simulate run time given the output.
+### Features
 
+Features of this UI include:
 
+- Darkmode 
+- Responsive design
+- Search functionality in the navbar
+- Random campaign recommendation in the banner
+- Filtered rows navigation inspired by Netflix:copyright:
+- User friendly dialog box with investment functionality 
+- Informative snackbar alerts for invalid investments or searches
+- Successful investment confirmation with social sharing
 
 ---
 
