@@ -1,7 +1,10 @@
    <h1 align="center">
   Mini Seedrs is now easy to use ! 
   </h1>
-     <p align="center">( :honeybee: if you still prefer the hard way read our APIs at <a href="https://github.com/filippomassarelli/docker-mini-seedrs">docker-mini-seedrs</a> )<br>
+     <p align="center">:honeybee: if you still prefer the hard way read our APIs at <a href="https://github.com/filippomassarelli/docker-mini-seedrs">docker-mini-seedrs</a><br>
+   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](#contributing)
+   ![AppVeyor tests](https://img.shields.io/appveyor/tests/filippomassarelli/react-mini-seedrs)
+   <br>
      <img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" right="center"
      alt="flying saucer" width="350">
 </p>
@@ -134,3 +137,26 @@ Jest is a JavaScript based test runner, which allows tests to be run blazing fas
 Snapshot testing is another great addition to Jest. Snapshot testing as its name suggests is a feature that allows components to be tested by taking a snapshot of what the component should look like internally once it has been rendered.
 ## Enzyme
 Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components’ output. You can also manipulate, traverse, and in some ways simulate run time given the output.
+
+
+
+---
+
+## Contributing
+
+Want to contribute? Great!
+
+Just follow these steps:
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make your changes
+- Commit with a descriptive message (`git commit -m 'description'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request
+
+---
+
+:point_up_2: [Back to the top](#mini-seedrs-is-now-easy-to-use-)
+
+**License**
+MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
