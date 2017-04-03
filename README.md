@@ -26,7 +26,10 @@ Thank you for being awesome.
   - [Install and Run](#install-and-run)
   - [Test](#test)
 - [Built With](#built-with)
-- 
+  - [Tools and libraries](#tools-and-libraries)
+  - [Technologies](#technologies)
+  - [Features](#features)
+- [Contributing](#contributing)
 
 ---
 
@@ -207,7 +210,7 @@ Just follow these steps:
 
 ---
 
-:point_up_2: [Back to the top](#mini-seedrs-is-now-easy-to-use-)
+:point_up_2: [Back to the top](#introduction)
 
 **License**
 MIT © [Filippo Massarelli](https://github.com/filippomassarelli)
