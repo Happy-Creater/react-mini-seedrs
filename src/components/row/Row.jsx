@@ -1,38 +1,62 @@
 import { Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import React, { useState, useEffect } from "react";
 import { campaignsAPI } from "../../axios";
 import CampaignCard from "../card/Card";
-import "./Row.css";
 
+//STYLES
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+  },
+  rowCards: {
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+    display: "flex",
+    overflowY: "hidden",
+    overflowX: "scroll",
+    padding: "20px",
+  },
+  row: {
+    marginLeft: "20px",
+    textAlign: "center",
+  },
+});
+
+//FUNCTIONAL COMPONENT
 function Row({ title, fetchUrl, subtitle }) {
+  //OTHER HOOKS
+  const classes = useStyles();
+
+  //STATE HOOKS
   const [campaigns, setCampaigns] = useState([]);
 
-  //   useEffect will run based on a specific condition, as we gave it fetchUrl as
-  //   condition it will run when the component loads and everytime fetchUrl changes
+  //API REQUESTS
   useEffect(() => {
     async function fetchData() {
       const request = await campaignsAPI.get(fetchUrl);
-      //   console.table(request.data);
       setCampaigns(request.data);
       return request;
     }
     fetchData();
   }, [fetchUrl]);
 
+  //OUTPUT
   return (
-    <div className="row">
+    <div className={classes.row}>
       <Typography variant="h4" style={{ marginTop: "25px" }}>
         {title}
       </Typography>
       <Typography variant="subtitle1" gutterBottom>
         {subtitle} <br />
       </Typography>
-      <div className="row__cards">
+      <div className={classes.rowCards}>
         {campaigns.map((campaign) => (
           <CampaignCard
             key={campaign.id}
-            id={campaign.id}
-            className="row__card"
+            campaignId={campaign.id}
+            className={classes.rowCard}
             name={campaign.name}
             percentageRaised={campaign.percentage_raised}
             targetAmount={campaign.target_amount}

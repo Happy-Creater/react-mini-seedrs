@@ -3,6 +3,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
+//COMPONENT
 function CircularProgressWithLabel(props) {
   return (
     <Box position="relative" display="inline-flex">

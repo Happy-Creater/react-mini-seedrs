@@ -6,7 +6,6 @@ import Banner from "../components/banner/Banner";
 function CampaignsPage() {
   return (
     <div>
-      {/* <Header /> */}
       <Banner />
       <Row
         title="All campaigns"
