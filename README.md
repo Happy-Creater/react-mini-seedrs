@@ -133,7 +133,7 @@ Finally, run the start script with:
 npm run start
 ```
 
-If it doesn't do so automatically, open a browser tab and navigate to [http://localhost:3000](http://localhost:3000) to view the app.
+If it doesn't do so automatically, open a browser tab and navigate to [http://localhost:3001](http://localhost:3001) to view the app.
 
 And that's it, you are running Mini Seedrs in development mode :rocket:
 
