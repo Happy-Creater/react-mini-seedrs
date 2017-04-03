@@ -6,9 +6,6 @@
      <img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" right="center"
      alt="flying saucer" width="350">
 </p>
- [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](#contributing)
- 
- ![AppVeyor tests](https://img.shields.io/appveyor/tests/filippomassarelli/react-mini-seedrs)
 
 ## Introduction
 
