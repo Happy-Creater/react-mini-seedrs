@@ -11,7 +11,7 @@
 
 ### Overview
 
-You no longer need to be a techy in order to invest in the businesses you believe in. 
+You no longer need to be a techy in order to invest in the businesses you believe in.
 
 React Mini Seedrs provides a user friendly interface to conveniently interact with our APIs from your laptop, smartphone or tablet. Browse through all our investment opportunities, pick your favorite and invest. It's that easy!
 
@@ -53,18 +53,19 @@ $ jest -v
 
 The Mini Seedrs user interface is built to communicate with our APIs, which for now are only available if install our back-end app locally. So make sure you have either [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) or plain [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) repository cloned and their prerequisites installed.
 
-
 ### Install and Run
 
 First `cd` to your cloned Mini Seedrs back-end app and launch the server.
 
 Then open another terminal window to clone this repo and `cd` into the directory:
+
 ```
 git clone https://github.com/filippomassarelli/react-mini-seedrs.git
 cd react-mini-seedrs
 ```
 
 You should see the following folder structure:
+
 ```
 react-mini-seedrs
 ├── README.md
@@ -88,33 +89,33 @@ react-mini-seedrs
     │   │   └── Banner.jsx
     │   ├── card
     │   │   ├── Card.test.js
-    │   │   └── Card.jsx  
+    │   │   └── Card.jsx
     │   ├── currency
     │   │   ├── CurrencySelector.test.js
-    │   │   └── CurrencySelector.jsx    
+    │   │   └── CurrencySelector.jsx
     │   ├── form
     │   │   ├── form.test.js
-    │   │   └── form.jsx 
+    │   │   └── form.jsx
     │   ├── header
     │   │   ├── header.test.js
-    │   │   └── header.jsx      
+    │   │   └── header.jsx
     │   ├── progress
     │   │   ├── CircularProgress.test.js
     │   │   ├── CircularProgress.jsx
     │   │   ├── LinearProgress.test.js
-    │   │   └── LinearProgress.jsx     
+    │   │   └── LinearProgress.jsx
     │   ├── row
     │   │   ├── row.test.js
-    │   │   └── row.jsx       
+    │   │   └── row.jsx
     │   ├── search
     │   │   ├── search.test.js
-    │   │   └── search.jsx    
+    │   │   └── search.jsx
     │   ├── socials
     │   │   ├── Socials.test.js
-    │   │   └── Socials.jsx   
+    │   │   └── Socials.jsx
     │   └── tab
     │       ├── Tab.test.js
-    │       └── Tab.jsx  
+    │       └── Tab.jsx
     └── poages
         ├── CampaignsPage.jsx
         ├── InvestPage.jsx
@@ -122,6 +123,7 @@ react-mini-seedrs
 ```
 
 Now install the project dependencies using node package manager:
+
 ```
 npm install
 ```
@@ -129,6 +131,7 @@ npm install
 Check that the `package-lock.json` file and the `node_modules` folder has been added to the projects's root directory.
 
 Finally, run the start script with:
+
 ```
 npm run start
 ```
@@ -136,7 +139,6 @@ npm run start
 If it doesn't do so automatically, open a browser tab and navigate to [http://localhost:3001](http://localhost:3001) to view the app.
 
 And that's it, you are running Mini Seedrs in development mode :rocket:
-
 
 ### Test
 
@@ -157,9 +159,10 @@ Snapshots:   0 total
 Time:        22.84 s
 Ran all test suites.
 ```
+
 Jest will keep on running in the interactive watch mode, type `q` if you want to quit.
 
-Testing is awesome, however this project only scratches the surface of react component testing, especially for our stateful components. 
+Testing is awesome, however this project only scratches the surface of react component testing, especially for our stateful components.
 
 If you are a test wizard and feel like [contributing](#contributing) you are very welcome Sir 🧙
 
@@ -169,7 +172,7 @@ If you are a test wizard and feel like [contributing](#contributing) you are ver
 
 ### Tools and libraries
 
-The Mini Seedrs user interface has been bootstrapped with the help of the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) toolchain and the [Material-UI](https://material-ui.com/) library.   
+The Mini Seedrs user interface has been bootstrapped with the help of the [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) toolchain and the [Material-UI](https://material-ui.com/) library.
 
 ### Technologies
 
@@ -178,21 +181,68 @@ The major technologies are:
 - React JS
 - React Router
 - React Hooks
-
-Future work would include moving our components to Typescript, and centralise state management with Redux. 
+- Advanced Material-UI Hook APIs
 
 ### Features
 
 Features of this UI include:
 
-- Darkmode 
+- Darkmode
 - Responsive design
 - Search functionality in the navbar
 - Random campaign recommendation in the banner
-- Filtered rows navigation inspired by Netflix:copyright:
-- User friendly dialog box with investment functionality 
+- Filtered rows navigation inspired by Netflix©
+- User friendly dialog box with investment functionality
 - Informative snackbar alerts for invalid investments or searches
 - Successful investment confirmation with social sharing
+
+---
+
+## Making of
+
+### From Product
+
+With the Product Manager's hat on, we've started with some high-level **user stories** to help guide our development.
+
+Here are the major ones, from broad to specific:
+
+> As an investor on Seedrs I want to be able to view all currently live campaigns in a single view so that i can find the ones I want to invest in.
+
+> As an investor on seedrs I want to be able to sort and filter all the currently live campaigns so that I can find the ones most relevant to my investment criteria.
+
+> As a returning investor on seedrs I want to be able to search for a specific campaign so I can find a deal I know already.
+
+> As an investor on seedrs I want to be able to share my investments on social media so that I can let my network know I am an active investor.
+
+> As an investor on seedrs I want to be able to be able to see more campaigns after a successful investment so that I can continue investing.
+
+### From Design
+
+Switching to our Designer's hat, we've complemented the user stories with accompanying **wireframes** to further enlighten our path:
+
+![Campaigns Page](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Campaigns.png)
+_Campaigns Page_
+
+![Investment Page](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Invest.png)
+_Investment Page_
+
+![Investment Form](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Form.png)
+_Investment Form_
+
+![Investment Success](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Success.png)
+_Investment Success_
+
+---
+
+## Future Work
+
+Future work may include:
+
+- converting our components to Typescript
+- centralizing state management with Redux
+- write more robust tests for our stateful components
+- reduce API calls with caching
+- implement OAuth protocol for user authentication
 
 ---
 
@@ -201,6 +251,7 @@ Features of this UI include:
 Want to contribute? Great!
 
 Just follow these steps:
+
 - Fork the repo
 - Create a new branch (`git checkout -b improve-feature`)
 - Make your changes
