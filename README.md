@@ -29,6 +29,10 @@ Thank you for being awesome.
   - [Tools and libraries](#tools-and-libraries)
   - [Technologies](#technologies)
   - [Features](#features)
+- [Project planning](#project-planning)
+  - [From Product](#from-product)
+  - [From Design](#from-design)
+- [Future work](#future-work)
 - [Contributing](#contributing)
 
 ---
@@ -198,7 +202,7 @@ Features of this UI include:
 
 ---
 
-## Making of
+## Project planning
 
 ### From Product
 
@@ -206,13 +210,23 @@ With the Product Manager's hat on, we've started with some high-level **user sto
 
 Here are the major ones, from broad to specific:
 
+📇
+
 > As an investor on Seedrs I want to be able to view all currently live campaigns in a single view so that i can find the ones I want to invest in.
+
+📇
 
 > As an investor on seedrs I want to be able to sort and filter all the currently live campaigns so that I can find the ones most relevant to my investment criteria.
 
+📇
+
 > As a returning investor on seedrs I want to be able to search for a specific campaign so I can find a deal I know already.
 
+📇
+
 > As an investor on seedrs I want to be able to share my investments on social media so that I can let my network know I am an active investor.
+
+📇
 
 > As an investor on seedrs I want to be able to be able to see more campaigns after a successful investment so that I can continue investing.
 
@@ -220,20 +234,24 @@ Here are the major ones, from broad to specific:
 
 Switching to our Designer's hat, we've complemented the user stories with accompanying **wireframes** to further enlighten our path:
 
-<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Campaigns.png" width="250" />
-_Campaigns Page_
+<img src="./public/Campaigns.png" width="450" />
+*caption: Campaigns Page*
 
-<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Invest.png" width="250" />
-_Investment Page_
-<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Form.png" width="250" />
-_Investment Form_
+<img src="./public/Invest.png" width="450" />
 
-<img src="./public/Success.png" width="250" />
-_Investment Success_
+_caption: Investment Page_
+
+<img src="./public/Form.png" width="450" />
+
+_caption: Investment Form wireframe_
+
+<img src="./public/Success.png" width="450" />
+
+_caption: Investment Success wireframe_
 
 ---
 
-## Future Work
+## Future work
 
 Future work may include:
 
