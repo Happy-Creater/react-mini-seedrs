@@ -220,16 +220,15 @@ Here are the major ones, from broad to specific:
 
 Switching to our Designer's hat, we've complemented the user stories with accompanying **wireframes** to further enlighten our path:
 
-![Campaigns Page](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Campaigns.png)
+<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Campaigns.png" width="250" />
 _Campaigns Page_
 
-![Investment Page](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Invest.png)
+<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Invest.png" width="250" />
 _Investment Page_
-
-![Investment Form](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Form.png)
+<img src="https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Form.png" width="250" />
 _Investment Form_
 
-![Investment Success](https://github.com/filippomassarelli/react-mini-seedrs/blob/master/public/Success.png)
+<img src="./public/Success.png" width="250" />
 _Investment Success_
 
 ---
