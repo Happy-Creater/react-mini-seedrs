@@ -235,17 +235,28 @@ Here are the major ones, from broad to specific:
 Switching to our Designer's hat, we've complemented the user stories with accompanying **wireframes** to further enlighten our path:
 
 <div align="center"> 
-<img src="./public/Campaigns.png" width="450" />
-<italic>caption: Campaigns Page</italic>
+<img src="./public/Campaigns.png" width="450" /><br/>
 
-<img src="./public/Invest.png" width="450" />
+<italic>caption: Campaigns Page</italic>
+<br/>
+<br/>
+
+<img src="./public/Invest.png" width="450" /><br/>
+
 <italic>caption: Investment Page</italic>
+<br/>
+<br/>
 
 <img src="./public/Form.png" width="450" />
+<br/>
 <italic>caption: Investment Form wireframe</italic>
+<br/>
+<br/>
+<img src="./public/Success.png" width="450" /><br/>
 
-<img src="./public/Success.png" width="450" />
-<italic>caption: Investment Success wireframe</italic></div>
+<italic>caption: Investment Success wireframe</italic>
+
+</div>
 
 ---
 
