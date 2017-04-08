@@ -75,18 +75,18 @@ react-mini-seedrs
 ├── README.md
 ├── package.json
 ├── .gitignore
-├── index.js
-├── App.jsx
-├── App.test.js
-├── axios.js
-├── requests.js
-├── tabsText.js.jsx
-├── setupTests.js
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
 │   └── MiniSeedrs-Homepage.png
 └── src
+    ├── index.js
+    ├── App.jsx
+    ├── App.test.js
+    ├── axios.js
+    ├── requests.js
+    ├── tabsText.js.jsx
+    ├── setupTests.js
     ├── components
     │   ├── banner
     │   │   ├── Banner.test.js
