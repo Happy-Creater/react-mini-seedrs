@@ -1,7 +1,7 @@
    <h1 align="center">
   Mini Seedrs is now easy to use ! 
   </h1>
-     <p align="center">:honeybee: if you still prefer the hard way read our APIs at <a href="https://github.com/filippomassarelli/docker-mini-seedrs">docker-mini-seedrs</a>
+     <p align="center">:honeybee: if you still prefer the hard way read our API docs at <a href="https://github.com/filippomassarelli/docker-mini-seedrs">docker-mini-seedrs</a>
    <br>
      <img src="https://media.giphy.com/media/KApag9isJD1l7y6jmW/giphy.gif" right="center"
      alt="flying saucer" width="350">
