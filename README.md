@@ -237,24 +237,24 @@ Switching to our Designer's hat, we've complemented the user stories with accomp
 <div align="center"> 
 <img src="./public/Campaigns.png" width="450" /><br/>
 
-<italic>caption: Campaigns Page</italic>
+<italic>wireframe: Campaigns Page</italic>
 <br/>
 <br/>
 
 <img src="./public/Invest.png" width="450" /><br/>
 
-<italic>caption: Investment Page</italic>
+<italic>wireframe: Investment Page</italic>
 <br/>
 <br/>
 
 <img src="./public/Form.png" width="450" />
 <br/>
-<italic>caption: Investment Form wireframe</italic>
+<italic>wireframe: Investment Form</italic>
 <br/>
 <br/>
 <img src="./public/Success.png" width="450" /><br/>
 
-<italic>caption: Investment Success wireframe</italic>
+<italic>wireframe: Investment Success</italic>
 
 </div>
 
