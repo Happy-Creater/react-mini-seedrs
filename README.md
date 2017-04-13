@@ -55,7 +55,7 @@ $ jest -v
 26.6.3
 ```
 
-The Mini Seedrs user interface is built to communicate with our APIs, which for now are only available if install our back-end app locally. So make sure you have either [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) or plain [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) repository cloned and their prerequisites installed.
+The Mini Seedrs user interface is built to communicate with our APIs, which for now are only available if you install our back-end app locally. So make sure you have either [docker-mini-seedrs](https://github.com/filippomassarelli/docker-mini-seedrs) or plain [mini-seedrs](https://github.com/filippomassarelli/mini-seedrs) repository cloned and their prerequisites installed.
 
 ### Install and Run
 
