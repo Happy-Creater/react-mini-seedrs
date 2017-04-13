@@ -265,6 +265,7 @@ Switching to our Designer's hat, we've complemented the user stories with accomp
 Future work may include:
 
 - converting our components to Typescript
+- moving our styles from material UI styles to Styled components
 - refactoring the folder structure with the atomic design approach
 - centralizing state management with Redux
 - writing more robust tests for our stateful components
