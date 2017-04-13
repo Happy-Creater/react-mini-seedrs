@@ -265,10 +265,12 @@ Switching to our Designer's hat, we've complemented the user stories with accomp
 Future work may include:
 
 - converting our components to Typescript
+- refactoring the folder structure with the atomic design approach
 - centralizing state management with Redux
-- write more robust tests for our stateful components
-- reduce API calls with caching
-- implement OAuth protocol for user authentication
+- writing more robust tests for our stateful components
+- reducing API calls with caching
+- implementing OAuth protocol for user authentication
+- exploring server side rendering with Next.js
 
 ---
 
